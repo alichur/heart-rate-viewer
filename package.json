@@ -1,0 +1,8 @@
+{
+  "name": "minimalReact",
+  "version" : "0.0.1",
+  "description" : "write the most basic hello world I could make with React",
+  "dependencies": {
+    "express": "latest"
+  }
+}
