@@ -14,8 +14,44 @@
         render: function(){
           return(
             <div>
-              React hello world, with JSK, components and babel
-            </div>)
+              Container component for searching and results
+              <SearchBox/>
+              <HeartRateTable/>
+            </div>
+          )
+        }
+      });
+
+      var SearchBox = React.createClass({
+        render: function(){
+          return(
+            <form>
+              <input type="datetime-local" placeholder="start time..."/>
+              <input type="datetime-local" placeholder="end time..."/>
+            </form>
+          )
+        }
+      });
+
+      var HeartRateTable = React.createClass({
+        render: function(){
+          return(
+          <div>
+            All Data
+            <HeartRateRow/>
+            <HeartRateRow/>
+          </div>
+          )
+        }
+      });
+
+      var HeartRateRow = React.createClass({
+        render: function(){
+          return(
+            <div>
+              An individual bit of data
+            </div>
+          )
         }
       });
 
