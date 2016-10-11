@@ -1,5 +1,9 @@
 
-let HardCodedHeartData = { time: '14:24', BPM: '76' }
+let HardCodedHeartData = [
+    { time: '14:00', BPM: '76' },
+    { time: '5:59', BPM: '14' },
+    { time: '8:22', BPM: '25' },
+]
 
 class HealthDataBox extends React.Component {
   render() {
@@ -9,7 +13,7 @@ class HealthDataBox extends React.Component {
           Heart Rate
         </h1>
         <SearchBox />
-        <HeartRateTable heartData={this.props.heartData} />
+        <HeartRateTable  heartData={this.props.heartData} />
       </div>
     );
   }
@@ -28,10 +32,16 @@ class SearchBox extends React.Component {
 
 class HeartRateTable extends React.Component {
   render() {
+    let rows = [];
+    let length = this.props.heartData.length;
+    for(var i=0; i<length; i++){
+      rows.push(<HeartRateRow heartRecord={this.props.heartData[i]} />)
+    }
+
     return (
       <div>
-    Time   BPM
-        <HeartRateRow heartData={this.props.heartData}/>
+        Time   BPM
+        {rows}
       </div>
     );
   }
@@ -41,8 +51,8 @@ class HeartRateRow extends React.Component {
   render() {
     return (
       <div>
-        {this.props.heartData.time} {'\u00A0'}
-        {this.props.heartData.BPM}
+        {this.props.heartRecord.time} {'\u00A0'}
+        {this.props.heartRecord.BPM}
       </div>
     );
   }
