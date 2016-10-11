@@ -1,9 +1,14 @@
+/* TODO:
+* add props validation
+* add bundler and require react and ReactDOM
+* each component in separate file
+*/
 
-let HardCodedHeartData = [
+const HardCodedHeartData = [
     { time: '14:00', BPM: '76' },
     { time: '5:59', BPM: '14' },
     { time: '8:22', BPM: '25' },
-]
+];
 
 class HealthDataBox extends React.Component {
   render() {
@@ -13,7 +18,7 @@ class HealthDataBox extends React.Component {
           Heart Rate
         </h1>
         <SearchBox />
-        <HeartRateTable  heartData={this.props.heartData} />
+        <HeartRateTable heartData={this.props.heartData} />
       </div>
     );
   }
@@ -32,10 +37,10 @@ class SearchBox extends React.Component {
 
 class HeartRateTable extends React.Component {
   render() {
-    let rows = [];
-    let length = this.props.heartData.length;
-    for(var i=0; i<length; i++){
-      rows.push(<HeartRateRow heartRecord={this.props.heartData[i]} />)
+    const rows = [];
+    const length = this.props.heartData.length;
+    for (let i = 0; i < length; i += 1) {
+      rows.push(<HeartRateRow heartRecord={this.props.heartData[i]} />);
     }
 
     return (
