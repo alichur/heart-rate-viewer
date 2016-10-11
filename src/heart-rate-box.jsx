@@ -1,18 +1,15 @@
-const React = require('react');
 
-const ReactDOM = require('react-dom');
-
-let HardCodedHeartData;
+let HardCodedHeartData = { time: '14:24', BPM: '76' }
 
 class HealthDataBox extends React.Component {
   render() {
     return (
       <div>
         <h1>
-          Heartrates
+          Heart Rate
         </h1>
         <SearchBox />
-        <HeartRateTable />
+        <HeartRateTable heartData={this.props.heartData} />
       </div>
     );
   }
@@ -33,33 +30,25 @@ class HeartRateTable extends React.Component {
   render() {
     return (
       <div>
-    Time   beats per min
-        <HeartRateRow />
-        <HeartRateRow />
-        <HeartRateRow />
-        <HeartRateRow />
+    Time   BPM
+        <HeartRateRow heartData={this.props.heartData}/>
       </div>
     );
   }
 }
 
-class HeartRateRow extends React.Component{
+class HeartRateRow extends React.Component {
   render() {
     return (
       <div>
-          12:42  76
+        {this.props.heartData.time} {'\u00A0'}
+        {this.props.heartData.BPM}
       </div>
     );
   }
 }
 
-HardCodedHeartData = [
-  { time: '14:24', BPM: '76' },
-  { time: '14:25', BPM: '79' },
-  { time: '14:26', BPM: '78' },
-];
-
 ReactDOM.render(
-  <HealthDataBox />,
+  <HealthDataBox heartData={HardCodedHeartData} />,
   document.getElementById('container')
 );

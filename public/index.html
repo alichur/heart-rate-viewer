@@ -4,72 +4,11 @@
     <script src="https://unpkg.com/react@15.3.0/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15.3.0/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-    <script type="text/babel" src="src/heart-rate-box.js"></script>
+    <script type="text/babel" src="/heart-rate-box.jsx"></script>
 </head>
   <body>
     <!-- div holds all react content, do not touch -->
     <div id="container"></div>
-    <script type="text/babel">
 
-      class HealthDataBox extends React.Component {
-        render(){
-          return(
-            <div>
-              <h1>
-                Heartrates
-              </h1>
-            <SearchBox/>
-            <HeartRateTable/>
-            </div>
-          )
-        }
-      };
-
-      class SearchBox extends React.Component {
-        render(){
-          return(
-            <form>
-              <input type="datetime-local" placeholder="start time..."/>
-              <input type="datetime-local" placeholder="end time..."/>
-            </form>
-          )
-        }
-      };
-
-      class HeartRateTable extends React.Component {
-        render(){
-          return(
-          <div>
-          Time   beats per min
-            <HeartRateRow/>
-            <HeartRateRow/>
-            <HeartRateRow/>
-            <HeartRateRow/>
-          </div>
-          )
-        }
-      };
-
-      class HeartRateRow extends React.Component{
-        render(){
-          return(
-            <div>
-                12:42  76
-            </div>
-          )
-        }
-      };
-
-      var heartdata = [
-        {time: "14:24", BPM: "76"},
-        {time: "14:25", BPM: "79"},
-        {time: "14:26", BPM: "78"}
-    ];
-
-      ReactDOM.render(
-        <HealthDataBox/>,
-        document.getElementById('container')
-      );
-    </script>
   </body>
 </html>
