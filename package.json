@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "description": "write the most basic hello world I could make with React",
   "dependencies": {
-    "babel-preset-react": "^6.16.0",
-    "babelify": "^7.3.0",
     "express": "^4.4.5",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
   "devDependencies": {
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
     "babel-cli": "^6.16.0",
     "browserify": "^13.1.0",
     "semistandard": "^9.1.0"
