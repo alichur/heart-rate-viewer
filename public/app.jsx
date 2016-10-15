@@ -1,13 +1,12 @@
-/* TODO:
-* hook app into Browserify rather than the random link
-*/
-
 const React = require('react');
+const HealthDataBox = require('./health-data-box.jsx');
+
 
 class App extends React.Component {
   render() {
     return (
-      React.createElement('a', { href: 'www.google.co.nz' }, 'basic Browserify setup')
+      <HealthDataBox />
+      //React.createElement('a', { href: 'www.google.co.nz' }, 'basic Browserify setup')
     );
   }
 }

@@ -1,6 +1,6 @@
 const React = require('react');
-const SearchBox = require('../public/search-box.jsx');
-const HeartRateTable = require('../public/heart-rate-table');
+const SearchBox = require('./search-box.jsx');
+
 
 class HealthDataBox extends React.Component {
   render() {
@@ -9,11 +9,10 @@ class HealthDataBox extends React.Component {
         <h1>
           Heart Rate
         </h1>
-          //<SearchBox />
-          //<HeartRateTable heartData={this.props.heartData} />
+          <SearchBox />
       </div>
     );
   }
 }
 
-exports.healthDataBox = HealthDataBox;
+module.exports = HealthDataBox;
