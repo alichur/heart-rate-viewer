@@ -20756,23 +20756,80 @@ module.exports = validateDOMNesting;
 module.exports = require('./lib/React');
 
 },{"./lib/React":54}],172:[function(require,module,exports){
-/* TODO:
-* hook app into Browserify rather than the random link
-*/
-
 const React = require('react');
+const HealthDataBox = require('./health-data-box.jsx');
 
 class App extends React.Component {
   render() {
-    return (
-      React.createElement('a', { href: 'www.google.co.nz' }, 'basic Browserify setup')
-    );
+    return React.createElement(HealthDataBox, null)
+    //React.createElement('a', { href: 'www.google.co.nz' }, 'basic Browserify setup')
+    ;
   }
 }
 
 module.exports = App;
 
-},{"react":171}],173:[function(require,module,exports){
+},{"./health-data-box.jsx":173,"react":171}],173:[function(require,module,exports){
+const React = require('react');
+const SearchBox = require('./search-box.jsx');
+const HeartRateTable = require('./heart-rate-table.jsx');
+
+class HealthDataBox extends React.Component {
+  render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'h1',
+        null,
+        'Heart Rate'
+      ),
+      React.createElement(SearchBox, null),
+      React.createElement(HeartRateTable, null)
+    );
+  }
+}
+
+module.exports = HealthDataBox;
+
+},{"./heart-rate-table.jsx":175,"./search-box.jsx":177,"react":171}],174:[function(require,module,exports){
+const React = require('react');
+
+class HeartRateRow extends React.Component {
+  render() {
+    return React.createElement(
+      'div',
+      null,
+      '14:24 156'
+    );
+  }
+}
+
+module.exports = HeartRateRow;
+
+},{"react":171}],175:[function(require,module,exports){
+const React = require('react');
+const HeartRateRow = require('./heart-rate-row.jsx');
+
+class HeartRateTable extends React.Component {
+  render() {
+    var rows = [];
+    for (var i = 0; i < 5; i += 1) {
+      rows.push(React.createElement(HeartRateRow, null));
+    }
+
+    return React.createElement(
+      'div',
+      null,
+      'Time   BPM',
+      rows
+    );
+  }
+}
+
+module.exports = HeartRateTable;
+
+},{"./heart-rate-row.jsx":174,"react":171}],176:[function(require,module,exports){
 const React = require('react');
 
 const ReactDOM = require('react-dom');
@@ -20781,4 +20838,20 @@ const App = require('./app.jsx');
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('container'));
 
-},{"./app.jsx":172,"react":171,"react-dom":28}]},{},[173]);
+},{"./app.jsx":172,"react":171,"react-dom":28}],177:[function(require,module,exports){
+const React = require('react');
+
+class SearchBox extends React.Component {
+  render() {
+    return React.createElement(
+      "form",
+      null,
+      React.createElement("input", { type: "datetime-local", placeholder: "start time..." }),
+      React.createElement("input", { type: "datetime-local", placeholder: "end time..." })
+    );
+  }
+}
+
+module.exports = SearchBox;
+
+},{"react":171}]},{},[176]);
