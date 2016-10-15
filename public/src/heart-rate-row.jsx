@@ -4,7 +4,8 @@ class HeartRateRow extends React.Component {
   render () {
     return (
       <div>
-          14:24 156
+        {this.props.heartRecord.time} {'\u00A0'}
+        {this.props.heartRecord.BPM}
       </div>
     );
   }

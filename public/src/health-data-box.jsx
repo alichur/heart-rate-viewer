@@ -10,7 +10,7 @@ class HealthDataBox extends React.Component {
           Heart Rate
         </h1>
         <SearchBox />
-        <HeartRateTable />
+        <HeartRateTable heartData={this.props.heartData}/>
       </div>
     );
   }
