@@ -4,4 +4,4 @@ const ReactDOM = require('react-dom');
 
 const App = require('./app.jsx');
 
-ReactDOM.render(React.createElement(App, null), document.getElementById('container'));
+ReactDOM.render(<App />, document.getElementById('container'));
