@@ -1,8 +1,8 @@
 const React = require('react');
-const HeartRateRow = require('./heart-rate-row.jsx')
+const HeartRateRow = require('./heart-rate-row.jsx');
 
 class HeartRateTable extends React.Component {
-  render() {
+  render () {
     var rows = [];
     for (var i = 0; i < 5; i += 1) {
       rows.push(<HeartRateRow />);

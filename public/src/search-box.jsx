@@ -1,11 +1,11 @@
 const React = require('react');
 
 class SearchBox extends React.Component {
-  render() {
+  render () {
     return (
       <form>
-        <input type="datetime-local" placeholder="start time..." />
-        <input type="datetime-local" placeholder="end time..." />
+        <input type='datetime-local' placeholder='start time...' />
+        <input type='datetime-local' placeholder='end time...' />
       </form>
     );
   }
