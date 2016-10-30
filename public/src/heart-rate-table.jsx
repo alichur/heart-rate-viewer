@@ -4,9 +4,7 @@ const HeartRateRow = require('./heart-rate-row.jsx');
 class HeartRateTable extends React.Component {
   render () {
     const rows = [];
-    rows.push(this.props.heartData.map((record) => <HeartRateRow heartRecord={record} />));
-
-
+    rows.push(this.props.heartData.map((record) => <HeartRateRow key={record.time} heartRecord={record} />));
     return (
       <div>
         Time   BPM
