@@ -1,5 +1,3 @@
-//most minimal server I could make
-
 var express = require('express');
 
 app = express();
