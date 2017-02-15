@@ -3,9 +3,9 @@ const React = require('react');
 function HeartRateRow(props) {
   return (
     <div>
-      {this.props.heartRecord.time}
+      {props.heartRecord.time}
       {'\u00A0'}
-      {this.props.heartRecord.BPM}
+      {props.heartRecord.BPM}
     </div>
   );
 }

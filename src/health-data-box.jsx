@@ -9,7 +9,7 @@ function HealthDataBox(props) {
         Heart Rate
       </h1>
       <SearchBox/>
-      <HeartRateTable heartData={this.props.heartData}/>
+      <HeartRateTable/>
     </div>
   );
 }

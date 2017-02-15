@@ -2,9 +2,15 @@ const React = require('react');
 const HeartRateRow = require('./heart-rate-row.jsx');
 
 class HeartRateTable extends React.Component {
-  constructor(props) {
-    super(props);
-    const HardCodedHeartData = [
+  constructor() {
+    super();
+    this.state = {
+      heartData: {}
+    };
+  }
+
+  componentDidMount() {
+    var data = [
       {
         time: '14:00',
         BPM: '76'
@@ -16,13 +22,14 @@ class HeartRateTable extends React.Component {
         BPM: '25'
       }
     ];
-    this.state = {
-      heartData: HardCodedHeartData
-    };
+    this.setState({heartData: data});
   }
+
   render() {
     const rows = [];
-    rows.push(this.state.heartData.map((record) => <HeartRateRow key={record.time} heartRecord={record}/>));
+    if (Array.isArray(this.state.heartData)) {
+      rows.push(this.state.heartData.map((record) => <HeartRateRow key={record.time} heartRecord={record}/>));
+    }
     return (
       <div>
         Time BPM {rows}
