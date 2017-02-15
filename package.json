@@ -20,7 +20,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "watch": "watchify -t [ babelify --presets [ react ] ] -p livereactload public/src/main.jsx -o public/build/bundle.js -v",
-    "build": "browserify -t [ babelify --presets [ react ] ] public/src/main.jsx -o public/build/bundle.js"
+    "watch": "watchify -t [ babelify --presets [ react ] ] -p livereactload src/main.jsx -o public/build/bundle.js -v",
+    "build": "browserify -t [ babelify --presets [ react ] ] src/main.jsx -o public/build/bundle.js"
   }
 }
