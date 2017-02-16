@@ -1,5 +1,5 @@
 const React = require('react');
-const SearchBox = require('./search-box.jsx');
+const SelectionBox = require('./selection-box.jsx');
 const HeartRateTable = require('./heart-rate-table.jsx');
 import {heartRateSeconds, heartRateMinute} from './dummyData.js';
 
@@ -35,7 +35,7 @@ class HealthDataBox extends React.Component {
         <h1>
           Heart Rate
         </h1>
-        <SearchBox value={this.state.value} handleChange={this.handleTimeUnitChange}/>
+        <SelectionBox value={this.state.value} handleChange={this.handleTimeUnitChange}/>
         <HeartRateTable heartData={this.state.heartData}/>
       </div>
     );
