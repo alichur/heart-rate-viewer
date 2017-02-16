@@ -1,5 +1,6 @@
 const React = require('react');
 const HeartRateRow = require('./heart-rate-row.jsx');
+import {heartRateSeconds, heartRateMinute} from './dummyData.js';
 
 class HeartRateTable extends React.Component {
   constructor() {
@@ -10,18 +11,7 @@ class HeartRateTable extends React.Component {
   }
 
   componentDidMount() {
-    var data = [
-      {
-        time: '14:00',
-        BPM: '76'
-      }, {
-        time: '5:59',
-        BPM: '14'
-      }, {
-        time: '8:22',
-        BPM: '25'
-      }
-    ];
+    var data = heartRateSeconds;
     this.setState({heartData: data});
   }
 

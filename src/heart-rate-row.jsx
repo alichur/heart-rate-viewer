@@ -5,7 +5,7 @@ function HeartRateRow(props) {
     <div>
       {props.heartRecord.time}
       {'\u00A0'}
-      {props.heartRecord.BPM}
+      {props.heartRecord.value}
     </div>
   );
 }
