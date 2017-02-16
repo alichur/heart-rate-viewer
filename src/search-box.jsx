@@ -4,8 +4,13 @@ class SearchBox extends React.Component {
   render() {
     return (
       <form>
-        <input type='datetime-local' placeholder='start time...'/>
-        <input type='datetime-local' placeholder='end time...'/>
+        <label>
+          Choose your level of detail
+        </label>
+        <select>
+          <option value='seconds'>Seconds</option>
+          <option value='minutes'>Minutes</option>
+        </select>
       </form>
     );
   }
