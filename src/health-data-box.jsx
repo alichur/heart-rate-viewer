@@ -8,23 +8,40 @@ class HealthDataBox extends React.Component {
     super();
     this.state = {
       value: 'minutes',
-      heartData: {}
+      heartData: heartRateMinute
     };
+    this.handleTimeUnitChange = this.handleTimeUnitChange.bind(this);
   }
+  handleTimeUnitChange(newUnit) {
+    var newData;
+
+    switch (newUnit) {
+      case 'seconds':
+        newData = heartRateSeconds
+        break;
+      case 'minutes':
+        newData = heartRateMinute
+        break;
+      default:
+        newData = {};
+    }
+
+    this.setState({value: newUnit, heartData: newData});
+  }
+
   render() {
     return (
       <div>
         <h1>
           Heart Rate
         </h1>
-        <SearchBox value={this.state.value}/>
+        <SearchBox value={this.state.value} handleChange={this.handleTimeUnitChange}/>
         <HeartRateTable heartData={this.state.heartData}/>
       </div>
     );
   }
   componentDidMount() {
-    var data = heartRateSeconds;
-    this.setState({heartData: data});
+    //fitbit api calls here.
   }
 }
 
