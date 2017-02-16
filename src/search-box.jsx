@@ -1,12 +1,13 @@
 const React = require('react');
 
 class SearchBox extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      value: 'minutes'
-    }
+      value: this.props.value
+    };
   }
+
   render() {
     return (
       <form>
