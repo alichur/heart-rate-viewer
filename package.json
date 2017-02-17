@@ -14,13 +14,16 @@
     "babel-preset-react": "^6.16.0",
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
+    "chai": "^3.5.0",
     "livereactload": "^3.0.1",
+    "mocha": "^3.2.0",
     "react-proxy": "^1.1.8",
     "semistandard": "^9.1.0",
     "watchify": "^3.7.0"
   },
   "scripts": {
     "watch": "watchify -t [ babelify --presets [ react ] ] -p livereactload src/main.jsx -o public/build/bundle.js -v",
-    "build": "browserify -t [ babelify --presets [ react ] ] src/main.jsx -o public/build/bundle.js"
+    "build": "browserify -t [ babelify --presets [ react ] ] src/main.jsx -o public/build/bundle.js",
+    "test": "mocha"
   }
 }
