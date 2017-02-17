@@ -15,15 +15,20 @@
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
     "chai": "^3.5.0",
+    "enzyme": "^2.7.1",
+    "jsdom": "^9.11.0",
     "livereactload": "^3.0.1",
     "mocha": "^3.2.0",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
     "react-proxy": "^1.1.8",
     "semistandard": "^9.1.0",
+    "sinon": "^1.17.7",
     "watchify": "^3.7.0"
   },
   "scripts": {
     "watch": "watchify -t [ babelify --presets [ react ] ] -p livereactload src/main.jsx -o public/build/bundle.js -v",
     "build": "browserify -t [ babelify --presets [ react ] ] src/main.jsx -o public/build/bundle.js",
-    "test": "mocha"
+    "test": "mocha --compilers js:babel-register --require test/helpers.js --require test/dom.js --recursive"
   }
 }

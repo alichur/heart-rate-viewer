@@ -1,6 +1,6 @@
 const React = require('react');
 
-class SearchBox extends React.Component {
+class SelectionBox extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this)
@@ -14,7 +14,7 @@ class SearchBox extends React.Component {
         <label>
           Choose your level of detail
         </label>
-        <select value={this.props.value} onChange={this.handleChange}>
+        <select class="detail-selector" value={this.props.value} onChange={this.handleChange}>
           <option value='seconds'>Seconds</option>
           <option value='minutes'>Minutes</option>
         </select>
@@ -22,4 +22,4 @@ class SearchBox extends React.Component {
     );
   }
 }
-module.exports = SearchBox;
+module.exports = SelectionBox;

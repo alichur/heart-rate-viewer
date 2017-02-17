@@ -1,9 +1,10 @@
-var assert = chai.assert;
+import React from 'react';
+import SelectionBox from '../src/selection-box';
 
-describe('Array', function () {
-  describe('#indexOf()', function () {
-    it('should return -1 when the value is not present', function () {
-      assert.equal(-1, [1, 2, 3].indexOf(4));
-    });
+describe('Selection Box', () => {
+  const wrapper = shallow( < SelectionBox / > );
+
+  it('should be a list item', () => {
+    expect(wrapper.text()).to.contain('Choose your level of detail');
   });
 });
