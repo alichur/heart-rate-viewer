@@ -30,12 +30,20 @@ class HealthDataBox extends React.Component {
   }
 
   render() {
+    var options = [{
+      key: 'seconds',
+      value: 'Seconds'
+    }, {
+      key: 'minutes',
+      value: 'Minutes'
+    }
+  ];
     return (
       <div>
         <h1>
           Heart Rate
         </h1>
-        <SelectionBox value={this.state.value} handleChange={this.handleTimeUnitChange}/>
+        <SelectionBox value={this.state.value} options={options} handleChange={this.handleTimeUnitChange}/>
         <HeartRateTable heartData={this.state.heartData}/>
       </div>
     );

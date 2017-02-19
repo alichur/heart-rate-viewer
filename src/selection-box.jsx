@@ -9,14 +9,17 @@ class SelectionBox extends React.Component {
     this.props.handleChange(event.target.value);
   }
   render() {
+    var optionList = [];
+    this.props.options.forEach((option) => {
+        optionList.push(<option key={option.key} value={option.key}>{option.value}</option>);
+      });
     return (
       <form>
         <label>
           Choose your level of detail
         </label>
-        <select class="detail-selector" value={this.props.value} onChange={this.handleChange}>
-          <option value='seconds'>Seconds</option>
-          <option value='minutes'>Minutes</option>
+        <select className="detail-selector" value={this.props.value} onChange={this.handleChange}>
+          {optionList}
         </select>
       </form>
     );
