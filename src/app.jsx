@@ -1,5 +1,4 @@
-const React = require('react');
-const HealthDataBox = require('./health-data-box.jsx');
+import React from 'react';
 import { Link } from 'react-router';
 
 class App extends React.Component {

@@ -1,6 +1,6 @@
-const React = require('react');
-const SelectionBox = require('./selection-box.jsx');
-const HeartRateTable = require('./heart-rate-table.jsx');
+import React from 'react';
+import SelectionBox from './selection-box.jsx';
+import HeartRateTable from './heart-rate-table.jsx';
 import {heartRateSeconds, heartRateMinute} from './dummyData.js';
 
 class HealthDataBox extends React.Component {

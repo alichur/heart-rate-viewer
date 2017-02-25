@@ -1,5 +1,5 @@
-const React = require('react');
-const HeartRateRow = require('./heart-rate-row.jsx');
+import React from 'react';
+import HeartRateRow from './heart-rate-row.jsx';
 
 function HeartRateTable(props) {
   const rows = [];
