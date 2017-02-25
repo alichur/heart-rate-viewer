@@ -22,6 +22,7 @@
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-proxy": "^1.1.8",
+    "react-router": "^3.0.2",
     "semistandard": "^9.1.0",
     "sinon": "^1.17.7",
     "watchify": "^3.7.0"
@@ -29,6 +30,7 @@
   "scripts": {
     "watch": "watchify -t [ babelify --presets [ react ] ] -p [ livereactload --port 4475 ] src/main.jsx -o public/build/bundle.js -v",
     "build": "browserify -t [ babelify --presets [ react ] ] src/main.jsx -o public/build/bundle.js",
+    "debug": "browserify --debug -t [ babelify --presets [ react ] ] src/main.jsx -o public/build/bundle.js",
     "test": "mocha --compilers js:babel-register --require test/helpers.js --require test/dom.js --recursive"
   }
 }
