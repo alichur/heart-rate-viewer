@@ -1,6 +1,6 @@
 import React from 'react';
-import HealthDataBox from '../src/health-data-box.jsx'
-import {heartRateSeconds, heartRateMinute} from '../src/dummyData.js'
+import HealthDataBox from '../src/components/health-data-box.jsx'
+import {heartRateSeconds, heartRateMinute} from '../src/components/dummyData.js'
 
 describe('Health Data Box', () =>  {
   it('should update state to the selected time units', () => {

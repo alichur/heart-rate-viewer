@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectionBox from '../src/selection-box';
+import SelectionBox from '../src/components/selection-box';
 
 var selectOptions = [{
       key: 'mittens123',
