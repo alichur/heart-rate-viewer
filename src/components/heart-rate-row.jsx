@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HeartRateRow(props) {
+function HeartRateRow (props) {
   return (
     <div>
       {props.heartRecord.time}

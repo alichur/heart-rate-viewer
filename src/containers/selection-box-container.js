@@ -1,21 +1,20 @@
-import { connect } from 'react-redux'
-import { displayData, setDataView } from '../actions'
-import SelectionBox from '../components/selection-box.jsx'
+import { connect } from 'react-redux';
+import { setDataView } from '../actions';
+import SelectionBox from '../components/selection-box.jsx';
 
 const mapStateToProps = (state) => ({
   value: state.dataFrequency
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   handleChange: (frequency) => {
-    dispatch(setDataView(frequency))
+    dispatch(setDataView(frequency));
   }
-})
+});
 
-const SelectionBoxContainer= connect(
+const SelectionBoxContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SelectionBox)
-
+)(SelectionBox);
 
 export default SelectionBoxContainer;

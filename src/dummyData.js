@@ -1,4 +1,4 @@
-//some hardcoded values to play with until connected properly with API
+// some hardcoded values to play with until connected properly with API
 export const heartRateSeconds = [{
     "time": "09:00:05",
     "value": 56

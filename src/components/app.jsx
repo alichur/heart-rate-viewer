@@ -1,19 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 
 class App extends React.Component {
-  render() {
+  render () {
     return (
-          <div>
-            <ul role="nav">
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/heartrate">Heart rate</Link></li>
-            </ul>
+      <div>
+        <ul role='nav'>
+          <li>
+            <Link to='/about'>About</Link>
+          </li>
+          <li>
+            <Link to='/heartrate'>Heart rate</Link>
+          </li>
+        </ul>
 
-            {this.props.children}
+        {this.props.children}
 
-          </div>
-        );
+      </div>
+    );
   }
 }
 module.exports = App;

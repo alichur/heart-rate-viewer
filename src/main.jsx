@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app.jsx';
-import { Router, Route, browserHistory } from 'react-router';
+import {Router, Route, browserHistory} from 'react-router';
 import About from './components/About.jsx'
 import HealthDataBox from './components/health-data-box.jsx';
-import { createStore } from 'redux'
+import {createStore} from 'redux'
 import fitbitApp from './reducers'
-import { Provider } from 'react-redux'
+import {Provider} from 'react-redux'
 
-const store = createStore(
-  fitbitApp,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+const store = createStore(fitbitApp, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render((
   <Provider store={store}>
