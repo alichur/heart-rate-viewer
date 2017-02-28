@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectionBoxContainer from '../containers/selection.js';
+import SelectionBoxContainer from '../containers/selection-box-container.js';
 import HeartRateTableContainer from '../containers/heart-rate-table-container.js';
 import {heartRateSeconds, heartRateMinute} from '../dummyData.js';
 
