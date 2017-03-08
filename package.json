@@ -33,6 +33,7 @@
     "watch": "watchify -t [ babelify --presets [ react ] ] -p [ livereactload --port 4475 ] src/main.jsx -o public/build/bundle.js -v",
     "build": "browserify -t [ babelify --presets [ react ] ] src/main.jsx -o public/build/bundle.js",
     "debug": "browserify --debug -t [ babelify --presets [ react ] ] src/main.jsx -o public/build/bundle.js",
-    "test": "mocha --compilers js:babel-register --require test/helpers.js --require test/dom.js --recursive"
+    "test": "mocha --compilers js:babel-register --require test/helpers.js --require test/dom.js --recursive",
+    "test-debug" : "mocha --compilers js:babel-register --require test/helpers.js --require test/dom.js --recursive --debug-brk" 
   }
 }
