@@ -9,31 +9,34 @@ export const setDataView = (frequency) => ({
 
 export const fetchData = function (frequency) {
   return (dispatch) => {
-    dispatch(setDataView(frequency));
     var headers = {
       'Authorization': 'Bearer ' + store.getState().fitbitApp.fitbitAuthToken
     };
-    var url = 'https://api.fitbit.com/1/user/-/activities/heart/date/2016-01-30/1d/1min/time/14:00/16:30.json';
-  return isofetch(url, {
-    headers: headers,
-    mode: 'cors',
-    method: 'GET'
-  }).then(function (res) {
-    return res.json();
-  }).then(function (json) {
-    console.log(json);
-    var test = json;
-    debugger;
-    dispatch(setData(json));
-  }).catch(function (err) {
-    console.log('error', err)
-  });
-}
+    var url = 'https://api.fitbit.com/1/user/-/activities/heart/date/2016-01-30/1d/1min/time/14:00/14:03.json';
+    return isofetch(url, {
+      headers: headers,
+      mode: 'cors',
+      method: 'GET'
+    }).then(function (res) {
+      return res.json();
+    }).then(function (json) {
+      console.log(json);
+      var test = json;
+      dispatch(fetchHeartDataSuccess(json));
+    }).catch(function (err) {
+      console.log('error', err)
+    });
+  }
 }
 
-export const setData = (data) => ({
-  type: 'SET_DATA',
+const fetchHeartDataSuccess = (data) => ({
+  type: 'FETCH_HEARTDATA_SUCCESS',
   data
+});
+
+export const fetchHeartDataFailure = (err) => ({
+  type: 'FETCH_HEARTDATA_FAILURE',
+  err
 });
 
 export const isAuthenticating = () => ({

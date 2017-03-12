@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   handleChange: (frequency) => {
+    dispatch(setDataView(frequency));
     dispatch(fetchData(frequency));
   }
 });

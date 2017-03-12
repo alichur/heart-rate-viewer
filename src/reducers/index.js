@@ -38,7 +38,7 @@ function fitbitApp(state = initialState, action) {
     return Object.assign({}, state, {
       dataFrequency: action.frequency
     });
-    case 'SET_DATA':
+    case 'FETCH_HEARTDATA_SUCCESS':
       return Object.assign({}, state, {
         heartData: action.data
       });
