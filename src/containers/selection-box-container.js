@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import { setDataView, authenticationError, fetchData } from '../actions';
+import { setDataView, fetchData } from '../actions';
 import SelectionBox from '../components/selection-box.jsx';
-
 
 const mapStateToProps = (state) => ({
   value: state.dataFrequency

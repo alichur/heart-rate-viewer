@@ -1,11 +1,10 @@
 import isofetch from 'isomorphic-fetch';
-import store from '../store/store'
+import store from '../store/store';
 
 export const setDataView = (frequency) => ({
   type: 'SET_DATA_VIEW',
   frequency
 });
-
 
 export const fetchData = function (frequency) {
   return (dispatch) => {
@@ -21,13 +20,12 @@ export const fetchData = function (frequency) {
       return res.json();
     }).then(function (json) {
       console.log(json);
-      var test = json;
       dispatch(fetchHeartDataSuccess(json));
     }).catch(function (err) {
-      console.log('error', err)
+      console.log('error', err);
     });
-  }
-}
+  };
+};
 
 const fetchHeartDataSuccess = (data) => ({
   type: 'FETCH_HEARTDATA_SUCCESS',
