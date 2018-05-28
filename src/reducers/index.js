@@ -1,5 +1,4 @@
 var initialState = {
-  dataFrequency: 'seconds',
   heartData: [],
   isAuthenticating: false,
   isAuthenticated: false,

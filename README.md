@@ -9,6 +9,8 @@ This project is a place to play with React and Redux.
 
 `npm run build`
 
+`npm start`
+
 Access at http://localhost:8080/
 
 ## Future
