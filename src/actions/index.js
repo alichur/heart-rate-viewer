@@ -1,6 +1,11 @@
 import isofetch from 'isomorphic-fetch';
 import store from '../store/store';
 
+// extract to fitbit helper
+const GRANULARITY_SECONDS = '1sec';
+const GRANULARITY_MINUTES = '1min';
+const HEARTRATE_BASE_URL = 'https://api.fitbit.com/1/user/-/activities/heart'
+
 export const setDataView = (frequency) => ({
   type: 'SET_DATA_VIEW',
   frequency
@@ -11,7 +16,8 @@ export const fetchData = function (frequency) {
     var headers = {
       'Authorization': 'Bearer ' + store.getState().fitbitApp.fitbitAuthToken
     };
-    var url = 'https://api.fitbit.com/1/user/-/activities/heart/date/2016-01-30/1d/1min/time/14:00/14:10.json';
+    const granularity = (frequency === 'seconds') ? GRANULARITY_SECONDS : GRANULARITY_MINUTES;
+    var url = `${HEARTRATE_BASE_URL}/date/2016-01-30/2016-01-30/${granularity}/time/14:00/14:10.json`;
     return isofetch(url, {
       headers: headers,
       mode: 'cors',
