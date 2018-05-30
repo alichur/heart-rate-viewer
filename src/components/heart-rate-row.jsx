@@ -9,4 +9,4 @@ function HeartRateRow (props) {
     </div>
   );
 }
-module.exports = HeartRateRow;
+export default HeartRateRow;

@@ -13,4 +13,4 @@ function HealthDataBox (props) {
     </div>
   );
 }
-module.exports = HealthDataBox;
+export default HealthDataBox;

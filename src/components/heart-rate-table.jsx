@@ -25,4 +25,4 @@ HeartRateTable.propTypes = {
   heartData: PropTypes.array,
   error: PropTypes.bool
 };
-module.exports = HeartRateTable;
+export default HeartRateTable;

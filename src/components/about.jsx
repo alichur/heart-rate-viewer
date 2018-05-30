@@ -7,4 +7,4 @@ function About (props) {
     </div>
   );
 }
-module.exports = About;
+export default About;

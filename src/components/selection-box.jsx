@@ -26,4 +26,4 @@ SelectionBox.propTypes = {
   handleChange: PropTypes.func.isRequired
 };
 
-module.exports = SelectionBox;
+export default SelectionBox;
