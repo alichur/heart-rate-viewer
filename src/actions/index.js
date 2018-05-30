@@ -1,10 +1,6 @@
 import isofetch from 'isomorphic-fetch';
 import store from '../store/store';
-
-// extract to fitbit helper
-const GRANULARITY_SECONDS = '1sec';
-const GRANULARITY_MINUTES = '1min';
-const HEARTRATE_BASE_URL = 'https://api.fitbit.com/1/user/-/activities/heart';
+import * as fitbit from '../fitbit-config.js';
 
 export const fetchData = function (
   frequency,
@@ -15,12 +11,12 @@ export const fetchData = function (
 ) {
   return (dispatch) => {
     const headers = {'Authorization': 'Bearer ' + store.getState().fitbitApp.fitbitAuthToken};
-    const granularity = (frequency === 'seconds') ? GRANULARITY_SECONDS : GRANULARITY_MINUTES;
+    const granularity = (frequency === 'seconds') ? fitbit.GRANULARITY_SECONDS : fitbit.GRANULARITY_MINUTES;
     const startDate = '2016-01-30';
     const endDate = '2016-01-30';
     const startTime = '14:00';
     const endTime = '14:10';
-    const url = `${HEARTRATE_BASE_URL}/date/${startDate}/${endDate}/${granularity}/time/${startTime}/${endTime}.json`;
+    const url = `${fitbit.HEARTRATE_BASE_URL}/date/${startDate}/${endDate}/${granularity}/time/${startTime}/${endTime}.json`;
 
     return isofetch(url, {
       headers: headers,
