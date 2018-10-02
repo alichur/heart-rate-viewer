@@ -17,7 +17,7 @@ describe('async actions', () => {
       "value": 62
     }
     nock('https://api.fitbit.com')
-      .get('/1/user/-/activities/heart/date/2016-01-30/1d/1min/time/14:00/14:03.json')
+      .get('/1/user/-/activities/heart/date/2016-01-30/2016-01-30/1min/time/14:00/14:10.json')
       .reply(200, testJson);
 
     const expectedActions = [

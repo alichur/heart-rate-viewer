@@ -2,14 +2,8 @@ import * as actions from '../src/actions';
 
 describe('actions', () => {
   it('should create an action to set the data view', () => {
-    const frequency = 'seconds';
-    const expectedAction = {
-      type: 'SET_DATA_VIEW',
-      frequency: frequency
-    };
-    expect(actions.setDataView(frequency)).to.deep.equal(expectedAction);
+    //todo
   });
-  it('should call fitbit api')
 });
 
 // var url = 'https://api.fitbit.com/1/user/-/activities/heart/date/2016-01-30/1d/1min/time/14:00/14:03.json';

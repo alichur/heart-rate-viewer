@@ -21,11 +21,6 @@ describe('Selection Box', () => {
     expect(wrapper.props().options).to.be.defined;
   });
 
-  it('should have a default value set from props', function () {
-    const wrapper = shallow(<SelectionBox  value='mittens123' options={selectOptions}/>);
-    expect(wrapper.find('select').props().value).to.equal('mittens123');
-});
-
   it('should trigger an update when the user makes a selection', () => {
     const handleChange = spy();
     const wrapper = shallow(<SelectionBox handleChange={handleChange} options={selectOptions}/>);
@@ -33,10 +28,4 @@ describe('Selection Box', () => {
     wrapper.find('select').simulate('change', {target: {value: 'myNewSelection'}});
     expect(handleChange.called).to.be.true;
   });
-
-    it('should have options from props', function () {
-      const wrapper = shallow(<SelectionBox value={'mittens123'}  options={selectOptions}/>);
-        expect(wrapper.find('option')).to.have.length(selectOptions.length);
-    });
-
 });
