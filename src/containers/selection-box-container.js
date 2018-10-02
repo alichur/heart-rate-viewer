@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 import { fetchData } from '../actions';
-import SelectionBox from '../components/selection-box.jsx';
+import SelectionBox from '../components/selection-box';
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   handleChange: (frequency) => {
     dispatch(fetchData(frequency));
-  }
+  },
 });
 
 const SelectionBoxContainer = connect(
   '',
-  mapDispatchToProps
+  mapDispatchToProps,
 )(SelectionBox);
 
 export default SelectionBoxContainer;

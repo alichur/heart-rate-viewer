@@ -7,10 +7,10 @@ export const fetchData = function (
   startDate,
   endDate,
   startTime,
-  endTime
+  endTime,
 ) {
   return (dispatch) => {
-    const headers = {'Authorization': 'Bearer ' + store.getState().fitbitApp.fitbitAuthToken};
+    const headers = { Authorization: `Bearer ${store.getState().fitbitApp.fitbitAuthToken}` };
     const granularity = (frequency === 'seconds') ? fitbit.GRANULARITY_SECONDS : fitbit.GRANULARITY_MINUTES;
     const startDate = '2016-01-30';
     const endDate = '2016-01-30';
@@ -19,40 +19,38 @@ export const fetchData = function (
     const url = `${fitbit.HEARTRATE_BASE_URL}/date/${startDate}/${endDate}/${granularity}/time/${startTime}/${endTime}.json`;
 
     return isofetch(url, {
-      headers: headers,
+      headers,
       mode: 'cors',
-      method: 'GET'
-    }).then(function (res) {
-      return res.json();
-    }).then(function (json) {
+      method: 'GET',
+    }).then(res => res.json()).then((json) => {
       console.log(json);
       dispatch(fetchHeartDataSuccess(json));
-    }).catch(function (err) {
+    }).catch((err) => {
       console.log('error', err);
     });
   };
 };
 
-const fetchHeartDataSuccess = (data) => ({
+const fetchHeartDataSuccess = data => ({
   type: 'FETCH_HEARTDATA_SUCCESS',
-  data
+  data,
 });
 
-export const fetchHeartDataFailure = (err) => ({
+export const fetchHeartDataFailure = err => ({
   type: 'FETCH_HEARTDATA_FAILURE',
-  err
+  err,
 });
 
 export const isAuthenticating = () => ({
-  type: 'IS_AUTHENTICATING'
+  type: 'IS_AUTHENTICATING',
 });
 
-export const isAuthenticated = (token) => ({
+export const isAuthenticated = token => ({
   type: 'IS_AUTHENTICATED',
-  token
+  token,
 });
 
-export const authenticationError = (error) => ({
+export const authenticationError = error => ({
   type: 'AUTHENTICATION_ERROR',
-  error
+  error,
 });

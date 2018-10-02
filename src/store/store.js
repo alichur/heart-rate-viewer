@@ -1,11 +1,13 @@
-import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
-import fitbitApp from '../reducers';
+import {
+  createStore, applyMiddleware, compose, combineReducers,
+} from 'redux';
 import { routerReducer } from 'react-router-redux';
 import ReduxThunk from 'redux-thunk';
+import fitbitApp from '../reducers';
 
 const reducer = combineReducers({
   routing: routerReducer,
-  fitbitApp: fitbitApp
+  fitbitApp,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
