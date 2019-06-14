@@ -1,14 +1,14 @@
 {
-  "presets": ["es2015", "react"],
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+  ],
   "env": {
     "development": {
       "plugins": [
-        ["react-transform", {
-          "transforms": [{
-            "transform": "livereactload/babel-transform",
-            "imports": ["react"]
-          }]
-        }]
+        [
+          "@babel/plugin-transform-react-jsx",
+        ]
       ]
     }
   }

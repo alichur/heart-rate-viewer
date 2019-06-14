@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import HeartRateTable from '../components/heart-rate-table';
+import HeartRateTable from '../components/heart-rate-table.jsx';
 
 const mapStateToProps = state => ({
   heartData: state.fitbitApp.heartData,

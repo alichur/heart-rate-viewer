@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app.jsx';
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route, browserHistory} from 'react-router-dom';
 import About from './components/About.jsx';
 import HealthDataBox from './components/health-data-box.jsx';
 import store from './store/store';
