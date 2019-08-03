@@ -1,7 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import * as fitbit from '../fitbit-connector.js';
+
 
 class App extends React.Component {
+  componentWillMount() {
+    fitbit.redirectToFitbitAuth()
+  }
+
   render () {
     return (
       <div>
@@ -20,4 +26,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;
