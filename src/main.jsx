@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app.jsx';
-import {Router, Route, browserHistory} from 'react-router-dom';
+// import { createBrowserHistory } from 'history';
+import {Router, Route, BrowserRouter} from 'react-router-dom';
 import About from './components/About.jsx';
 import HealthDataBox from './components/health-data-box.jsx';
 import store from './store/store';
@@ -9,7 +10,7 @@ import { isAuthenticated } from './actions';
 import {Provider} from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-const history = syncHistoryWithStore(browserHistory, store);
+// const history = syncHistoryWithStore(browserHistory, store);
 
 const redirectToFitbitAuth = () => {
   const windowIfDefined = typeof window === 'undefined' ? null : window;
@@ -36,12 +37,13 @@ const getToken = () => {
 
 ReactDOM.render((
   <Provider store={store}>
-    <Router history={history}>
-      <Route path='/' component={App} onEnter={redirectToFitbitAuth} >
-        <Route path='/login' />
-        <Route path='/about' component={About} onEnter={redirectToFitbitAuth} />
-        <Route path='/heartrate' component={HealthDataBox} />
-      </Route>
-    </Router>
+    <BrowserRouter>
+    <div>
+      <Route path='/' component={App} onEnter={redirectToFitbitAuth} />
+      <Route path='/login' />
+      <Route path='/about' component={About} onEnter={redirectToFitbitAuth} />
+      <Route path='/heartrate' component={HealthDataBox} />
+    </div>
+    </BrowserRouter>
   </Provider>
 ), document.getElementById('container'));
