@@ -1,6 +1,6 @@
 {
   "name": "minimal_react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "write the most basic hello world I could make with React",
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.3.0",
