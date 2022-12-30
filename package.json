@@ -32,7 +32,7 @@
     "eslint-plugin-react": "^7.14.3",
     "jsdom": "^15.1.1",
     "livereactload": "^3.5.0",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "nock": "^10.0.6",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.9.0",
